@@ -8,19 +8,16 @@
 </head>
 <body>
     <div class="form-container">
-        <h1>It's Alive!</h1>
-        <p>Hello there! To get things started, why don't you tell a little about yourself as well as provide your name?</p>
-
-       <div id="contact">
-        <h2>Get in Touch</h2>
+        <h1>Make your profile</h1>
+        <p>To get things started, why don't you tell a little about yourself as well as providing your name?</p>
         <div id="contact-form">
-                <form action="https://formspree.io/mpzyqdng" method="POST">
-                <input type="hidden" name="_subject" value="Contact request from personal website" />
-                <input type="email" name="_replyto" placeholder="Your email" required>
-                <textarea name="message" placeholder="Type your message" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </div>
+            <form action="https://formspree.io/mpzyqdng" method="POST">
+            <textarea class="name" name="name" placeholder="Your Name" required></textarea>
+            <input type="hidden" name="_subject" value="Contact request from personal website" />
+            <input class="email" type="email" name="_replyto" placeholder="Your email" required>
+            <textarea class="message" name="message" placeholder="Type your message" required></textarea>
+            <button class="button" type="submit">Send</button>
+        </form>
     </div>
 </body>
 </html>
