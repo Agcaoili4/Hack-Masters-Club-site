@@ -35,6 +35,14 @@ li a {
     text-decoration: none;
 }
 
+a:hover {
+    color: white;
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+    text-decoration-color: black;
+}
+    
+
 /* Form container */
 .form-container {
 
