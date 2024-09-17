@@ -27,30 +27,56 @@ body {
 
 /* Form container */
 .form-container {
-    background: linear-gradient(to bottom, #87CEEB, #E0F6FF);
+    background: linear-gradient(135deg, #87CEEB, #E0F6FF);
     color: #1c1f35;
-    padding: 50px;
+    padding: 2.5rem;
     width: min(400px, 90vw);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    animation: fadeIn 1s ease-out;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    animation: fadeIn 0.8s ease-out, scaleIn 0.6s ease-out;
     margin: auto;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.form-container input,
+.form-container textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #bdc3c7;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-container input:focus,
+.form-container textarea:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+.form-container textarea {
+    min-height: 100px;
+    resize: vertical;
 }
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
-}
-
-/* Form elements */
-.name, .email, .message {
-    margin-bottom: 20px;
-}
-
-.message textarea {
-    width: 100%;
-    padding: 10px;
-    resize: vertical;
 }
 
 /* Button styles */
@@ -68,6 +94,10 @@ body {
     overflow: hidden;
     width: fit-content;
     margin: auto;
+    animation: fadeIn 1s ease-out, scaleIn 0.6s ease-out;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-delay: 1.5s;
 }
 
 .button:hover {
@@ -101,8 +131,23 @@ body {
     }
 }
 
-/* Header */
-/* Navigation box */
+/* Header and navigation */
+
+/* Header styles */
+.header {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background-color: transparent; 
+    box-shadow: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header:hover {
+    transform: translateY(-5px);
+}
+
 nav {
     position: relative;
     width: 650px;
@@ -111,64 +156,56 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(255, 255, 255, 0.7); /* Transparent white background */
+    background: rgba(255, 255, 255, 0.7);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     margin: 20px auto;
     padding: 10px;
     transition: transform 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out, slideIn 0.6s ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0.6s;
 }
 
-/* Hover effect to lift the nav box */
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
 nav:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* Navigation links */
 nav a {
-    position: relative;
     display: inline-block;
     padding: 15px 30px;
     color: black; 
     text-decoration: none;
     font-weight: 700;
     font-size: 16px;
-    transition: background 0.3s ease, color 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
     border-radius: 8px;
     margin: 0 10px;
 }
 
-/* Active link (Home button) */
 nav a.active {
     background: linear-gradient(45deg, #FF4500, #FF6347); 
     color: #fff;
+    transform: scale(1.1);
 }
 
-/* Hover effect for other links */
 nav a:hover:not(.active) {
-    background: linear-gradient(45deg, #87CEEB, #E0F6FF); /* Full gradient syntax */
+    background: linear-gradient(45deg, #87CEEB, #E0F6FF);
     color: #fff;
+    transform: scale(1.05);
 }
 
-/* Hover effect for links */
-nav a:hover {
-    color: #3498db; /* Change link color on hover */
-    text-decoration: underline; /* Add underline on hover */
-}
-
-.header h1 {
-    margin: 0 10px;
-}
-
-/* Navigation styles */
-.pageNav {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-    margin-right: 10px;
-}
-
-/* Main content section for about.html */
+/* Main content */
 .mainContent {
     display: flex;
     flex-direction: column;
@@ -179,11 +216,22 @@ nav a:hover {
     background: linear-gradient(to bottom, #87CEEB, #E0F6FF);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     width: fit-content;
-    animation: fadeIn 1s ease-out;
-    transition: transform 0.3s ease;
+    animation: fadeIn 1s ease-out, zoomIn 0.8s ease-out;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
 }
 
-/* Club members section */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Club member styles */
 .membersDiv {
     justify-content: center;
     display: flex;
@@ -199,13 +247,17 @@ nav a:hover {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
     width: min(400px, 95vw);
-    animation: fadeIn 1s ease-out;
+    animation: fadeIn 1s ease-out, slideUp 0.8s ease-out;
     transition: transform 0.3s ease;
 }
 
-.memberInfo {
-    width: min(380px, 90vw);
-    margin: 5px;
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+    }
+    to {
+        transform: translateY(0);
+    }
 }
 
 .clubMemberDiv:hover {
@@ -218,27 +270,24 @@ nav a:hover {
     align-items: center;
     padding: 5px;
     display: flex;
-}
-
-/* Input elements */
-.inputBox {
-    width: 300px;
-}
-
-.inputTextArea {
-    min-height: 75px;
-    min-width: 300px;
-    max-width: 300px;
-}
-
-/* Contact form */
-#contact-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    animation: fadeIn 0.8s ease-out;
 }
 
 /* Typography */
+.form-container h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.form-container p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: #34495e;
+}
+
+
 p {
     font-size: 14px;
 }
