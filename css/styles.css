@@ -13,7 +13,7 @@ html {
 
 body {
     font-family: "Poppins", sans-serif;
-    background-image: url(../img/HackMastersClub.png);
+    background-image: url("../img/HackMastersClub.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
