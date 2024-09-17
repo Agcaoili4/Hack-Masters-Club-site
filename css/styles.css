@@ -2,8 +2,8 @@
 
 /* Reset and base styles */
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -13,46 +13,27 @@ html {
 
 body {
     font-family: "Poppins", sans-serif;
-    background-image: url(../img/HackMastersClub.png);
+    background-image: url(HackMastersClub.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     height: 100vh;
     width: 100vw;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* align-items: center; */
+    overflow: hidden;
 }
-
-li {
-    list-style: none;
-}
-
-li a {
-
-    text-decoration: none;
-}
-
-a:hover {
-    color: white;
-    text-decoration: underline;
-    text-underline-offset: 1rem;
-    text-decoration-color: black;
-}
-    
 
 /* Form container */
 .form-container {
-
     background: linear-gradient(to bottom, #87CEEB, #E0F6FF);
     color: #1c1f35;
     padding: 50px;
     width: min(400px, 90vw);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-    animation: fadeIn 2s ease-out;
+    animation: fadeIn 1s ease-out;
     margin: auto;
 }
 
@@ -74,7 +55,6 @@ a:hover {
 
 /* Button styles */
 .button {
-    width: fit-content;
     background-color: #3498db;
     color: white;
     border: none;
@@ -86,6 +66,8 @@ a:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     position: relative;
     overflow: hidden;
+    width: fit-content;
+    margin: auto;
 }
 
 .button:hover {
@@ -112,119 +94,6 @@ a:hover {
     animation: ripple 0.6s ease-out;
 }
 
-.header {
-
-    /* border: 2px solid blue; */
-    display: flex;
-    justify-content: center;
-    background-color:#E0F6FF;
-}
-
-.header h1 {
-
-    margin: 5px 10px;
-    /* border: 2px solid red; */
-}
-
-.pageNav {
-
-    /* border: 2px solid red; */
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-    margin-right: 10px;
-}
-
-
-.navUl {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
-
-.navUl li {
-    padding: 0px min(1vw, 15px);
-}
-
-.navUl li a {
-    font-weight: 700;
-    color:#1c1f35;
-}
-
-.mainContent {
-
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
-    margin: auto;
-    padding: 15px;
-    height: fit-content;
-    width: fit-content;
-    border-radius: 15px;
-    background-color: #87CEEB;
-}
-
-
-
-.membersDiv {
-
-    justify-content: center;
-    display: flex;
-    flex-wrap: wrap;
-    /* border: 2px solid red; */
-   
-}
-
-.clubMemberDiv {
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px;
-    background: linear-gradient(to bottom, #87CEEB, #E0F6FF);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    border-radius: 15px;
-    /* border: 2px solid blue; */
-    width: min(400px, 95vw);
-}
-
-.memberInfo {
-
-    width: min(380px, 90vw);
-    margin: 5px;
-}
-.footer{
-    /* border: 2px solid red; */
-    align-items: center;
-    padding: 5px;
-    display: flex;
-    background-color:#E0F6FF;
-}
-
-
-
-
-.inputBox {
-    width: 300px;
-}
-
-.inputTextArea {
-
-    min-height: 75px;
-    min-width: 300px;
-    max-width: 300px;
-}
-
-#contact-form {
-
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-
-}
-
-
 @keyframes ripple {
     to {
         transform: translate(-50%, -50%) scale(1);
@@ -232,14 +101,149 @@ a:hover {
     }
 }
 
-/* Typography */
-h1 {
-    font-size: 24px;
-    /* margin-bottom: 20px; */
-    /* text-align: center; */
+/* Header */
+/* Navigation box */
+nav {
+    position: relative;
+    width: 650px;
+    height: 60px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.7); /* Transparent white background */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    padding: 10px;
+    transition: transform 0.3s ease;
 }
 
+/* Hover effect to lift the nav box */
+nav:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Navigation links */
+nav a {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    color: black; 
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    transition: background 0.3s ease, color 0.3s ease;
+    border-radius: 8px;
+    margin: 0 10px;
+}
+
+/* Active link (Home button) */
+nav a.active {
+    background: linear-gradient(45deg, #FF4500, #FF6347); 
+    color: #fff;
+}
+
+/* Hover effect for other links */
+nav a:hover:not(.active) {
+    background: linear-gradient(45deg, #87CEEB, #E0F6FF); /* Full gradient syntax */
+    color: #fff;
+}
+
+/* Hover effect for links */
+nav a:hover {
+    color: #3498db; /* Change link color on hover */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+.header h1 {
+    margin: 0 10px;
+}
+
+/* Navigation styles */
+.pageNav {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+/* Main content section for about.html */
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    padding: 15px;
+    border-radius: 15px;
+    background: linear-gradient(to bottom, #87CEEB, #E0F6FF);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: fit-content;
+    animation: fadeIn 1s ease-out;
+    transition: transform 0.3s ease;
+}
+
+/* Club members section */
+.membersDiv {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.clubMemberDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    background: linear-gradient(to bottom, #87CEEB, #E0F6FF);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    width: min(400px, 95vw);
+    animation: fadeIn 1s ease-out;
+    transition: transform 0.3s ease;
+}
+
+.memberInfo {
+    width: min(380px, 90vw);
+    margin: 5px;
+}
+
+.clubMemberDiv:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer styles */
+.footer {
+    align-items: center;
+    padding: 5px;
+    display: flex;
+}
+
+/* Input elements */
+.inputBox {
+    width: 300px;
+}
+
+.inputTextArea {
+    min-height: 75px;
+    min-width: 300px;
+    max-width: 300px;
+}
+
+/* Contact form */
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Typography */
 p {
     font-size: 14px;
-    /* margin-bottom: 20px; */
+}
+
+/* Smooth scroll enhancement */
+html {
+    scroll-behavior: smooth;
 }
